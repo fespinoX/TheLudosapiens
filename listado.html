@@ -16,7 +16,6 @@
     <!-- BOOTSTRAP -->
 
     <link rel="stylesheet" href="css/estilo.css">
-    <script src="scripts/videohero.js"></script>
 </head>
 
 
@@ -72,14 +71,16 @@
 
     </style>
 
-<section class="jumbotron" style="background-image: url('img/jt_obras.jpg');">
+<body>
+
+<section class="jumbotron" style="background-image: url('http://pro.bols.netdna-cdn.com/wp-content/uploads/2017/12/Murdershroom-Marsh.jpg');">
 <div class="jumbotron_bar">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <ol class="breadcrumb pull-left">
             <li><a href="/">Inicio</a></li>
-            <li class="active">Ministerio de Agroindustria</li>
+            <li class="active">Listado de juegos</li>
           </ol>                    
         </div>
       </div>
@@ -89,12 +90,9 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
-          <h2>Obras del Ministerio de Agroindustria</h2>
-          <p>Conocé las obras que mejoran la calidad de vida de todos los argentinos.</p>
+          <h2>Listado de juegos</h2>
+          <p>Acá vas a encontrar todos los juegos en stock, ofertas y otras cositas</p>
         </div>
-        <div class="col-xs-12 text-center">
-          <a id="mapa" type="button" class="botones btn btn-primary" href="mapa.html">Mapa de Obras</a>
-    </div>
       </div>
     </div>
   </div>
@@ -102,65 +100,35 @@
 </section>
 
 <div class="container">
-  <section id="buscadorObras">
-    <div id="obras">
+  <section id="buscadorjuegos">
+    <div id="juegos">
       <div class="row">
         <div class="col-md-6">    
           <div class="form-group">
-            <label>Buscá por obra</label>
-            <input class="form-control search" placeholder="Buscá obras por nombre o descripcion">
+            <label>Buscá por juego</label>
+            <input class="form-control search" placeholder="Buscá juegos por nombre o descripcion">
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label for="">editorial</label>
+            <label for="">Editorial</label>
             <select id="tipo-editorial" class="form-control">
               <option value="Todas">Todas</option>
-              <option value="Buenos Aires">Buenos Aires</option>
-              <option value="Capital Federal">Capital Federal</option>
-              <option value="Catamarca">Catamarca</option>
-              <option value="Chaco">Chaco</option>
-              <option value="Chubut">Chubut</option>
-              <option value="Córdoba">Córdoba</option>
-              <option value="Corrientes">Corrientes</option>
-              <option value="Entre Ríos">Entre Ríos</option>
-              <option value="Jujuy">Jujuy</option>
-              <option value="Formosa">Formosa</option>
-              <option value="La Pampa">La Pampa</option>
-              <option value="La Rioja">La Rioja</option>
-              <option value="Mendoza">Mendoza</option>
-              <option value="Neuquén">Neuquén</option>
-              <option value="Misiones">Misiones</option>
-              <option value="Río Negro">Río Negro</option>
-              <option value="Salta">Salta</option>
-              <option value="San Juan">San Juan</option>
-              <option value="San Luis">San Luis</option>
-              <option value="Santa Cruz">Santa Cruz</option>
-              <option value="Santa Fe">Santa Fe</option>
-              <option value="Santiago del Estero">Santiago del Estero</option>
-              <option value="Tucumán">Tucumán</option>
-              <option value="Tierra del Fuego">Tierra del Fuego</option>
-              
-
+              <option value="Days of Wonder">Days of Wonder</option>
+              <option value="Fantasy Flight">Fantasy Flight</option>
+              <option value="Otra">Otra</option>
             </select>
           </div>
         </div>
         <div class="col-md-3">
           <div class="form-group">
-            <label for="">Tipo de Obra</label>
-            <select id="tipo-obra" class="form-control">
-              <option value="Todas">Todas</option>
-              <option value="Hábitat">Hábitat</option>
-              <option value="Renovación Urbana">Renovación Urbana</option>
-              <option value="Cloacas">Cloacas</option>
-              <option value="Agua potable">Agua potable</option>
-              <option value="Vivienda">Vivienda</option>
-              <option value="Cultura">Cultura</option>
-              <option value="Educación">Educación</option>
-              <option value="Salud">Salud</option>
-              <option value="Obras para controlar inundaciones">Obras para controlar inundaciones</option>
-              <option value="Espacio Público">Espacio Público</option>
-              <option value="Patrimonio">Patrimonio</option>
+            <label for="">Tipo de juego</label>
+            <select id="tipo-juego" class="form-control">
+              <option value="Todos">Todos</option>
+              <option value="Entry">Entry</option>
+              <option value="Party">Party</option>
+              <option value="Euro">Euro</option>
+              <option value="Ameritrash">Ameritrash</option>
             </select>
           </div>
         </div>
@@ -178,7 +146,7 @@
                 <i class="fa fa-warning fa-fw fa-2x"></i>
               </div>
               <div class="media-body">
-                <p>Se están cargando todas las obras públicas. Este proceso puede tardar aproximadamente un minuto.</p>
+                <p>Se están cargando todos los juegos. Este proceso puede tardar aproximadamente un minuto.</p>
               </div>
             </div>          
           </div>
@@ -213,7 +181,7 @@
  </div>  
 </div>
 
-
+</body>
 
 <!--
 <script src="{{ "/node_modules/list.js/dist/list.min.js" | prepend: site.baseurl }}"></script>
@@ -235,7 +203,7 @@
 
     var templates = {
       tarjeta: `<div class="col-xs-12 col-sm-6 col-md-4 item">
-    <a href="#obras-{index}" data-toggle="modal" class="panel panel-default">
+    <a href="#juegos-{index}" data-toggle="modal" class="panel panel-default">
         <div class="panel-body">
             <div class="media">
                 <div class="media-left media-middle">
@@ -246,15 +214,15 @@
                         <h4>{tipodejuego}</h4>
                     </div>
                 </div>
-                <h3 class="nombre-obra m-t-1">{titulo}</h3>
-                <p class="text-muted descripcion-obra">{descripcion}</p>
+                <h3 class="nombre-juego m-t-1">{titulo}</h3>
+                <p class="text-muted descripcion-juego">{descripcion}</p>
             </div>
         </div>
     </a>
 </div>`,
 
     tarjeta_destacado: `<div class="col-xs-12 col-sm-6 col-md-4 item">
-    <a href="#obras-{index}" data-toggle="modal" class="panel panel-default">
+    <a href="#juegos-{index}" data-toggle="modal" class="panel panel-default">
         <div class="panel-body">
             <div class="media">
                 <div class="media-left media-middle">
@@ -265,8 +233,8 @@
                         <h4>{tipodejuego}</h4>
                     </div>
                 </div>
-                <h3 class="nombre-obra m-t-1">{titulo}</h3>
-                <p class="text-muted descripcion-obra">{descripcion}</p>
+                <h3 class="nombre-juego m-t-1">{titulo}</h3>
+                <p class="text-muted descripcion-juego">{descripcion}</p>
                 <div class="pie">
                 <div class="izq">
                   <p>
@@ -278,15 +246,15 @@
         </div>
     </a>
 </div>`,
-      modal_n: `<div id="obras-{index}" class="modal fade" tabindex="-1" role="dialog"> 
+      modal_n: `<div id="juegos-{index}" class="modal fade" tabindex="-1" role="dialog"> 
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header bg-primary">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span> </button> 
-                      <h4 class="h5 nombre-obra modal-title">{titulo}</h4>
+                      <h4 class="h5 nombre-juego modal-title">{titulo}</h4>
                     </div>
                     <div class="modal-body p-b-3">  
-                      <p class="text-muted descripcion-obra m-t-1">{descripcion}</p>
+                      <p class="text-muted descripcion-juego m-t-1">{descripcion}</p>
                       <div class="text-muted">
                         {editorial}
                         {precio}
@@ -296,15 +264,15 @@
                   </div>
                 </div>
               </div>`,
-      modal_v: `<div id="obras-{index}" class="modal fade" tabindex="-1" role="dialog"> 
+      modal_v: `<div id="juegos-{index}" class="modal fade" tabindex="-1" role="dialog"> 
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header bg-primary">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span> </button> 
-                      <h4 class="nombre-obra modal-title">{titulo}</h4>
+                      <h4 class="nombre-juego modal-title">{titulo}</h4>
                     </div>
                     <div class="modal-body p-b-3"> 
-                      <p class="text-muted descripcion-obra m-t-1">{descripcion}</p>
+                      <p class="text-muted descripcion-juego m-t-1">{descripcion}</p>
                       <div class="text-muted">
                         {editorial}
                         {precio}
@@ -319,15 +287,15 @@
                   </div>
                 </div>
               </div>`,
-      modal_im: `<div id="obras-{index}" class="modal fade" tabindex="-1" role="dialog"> 
+      modal_im: `<div id="juegos-{index}" class="modal fade" tabindex="-1" role="dialog"> 
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header bg-primary">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span> </button> 
-                      <h4 class="nombre-obra modal-title">{titulo}</h4>
+                      <h4 class="nombre-juego modal-title">{titulo}</h4>
                     </div>
                     <div class="modal-body p-b-3">   
-                      <p class="text-muted descripcion-obra m-t-1">{descripcion}</p>
+                      <p class="text-muted descripcion-juego m-t-1">{descripcion}</p>
                       <div class="text-muted">
                         {editorial}
                         {precio}
@@ -337,7 +305,7 @@
                     <div class="modal-body p-b-3">
                       <div class="embed-responsive embed-responsive-16by9">
                         
-                      <img src="{imagen}" alt="imagen de obra pública"/>
+                      <img src="{imagen}" alt="imagen de juego pública"/>
                       </div>
                     </div>
                   </div>
@@ -345,9 +313,8 @@
               </div>`,
     }
 
-    window.obras = [];
-    window.locations = [];
-    window.configobras = 'Todas';
+    window.juegos = [];
+    window.configjuegos = 'Todos';
     window.configeditorial = 'Todas';
 
     $.ajax({
@@ -360,7 +327,7 @@
         $.each(response.feed.entry, function(index, row){
 
           
-            obras.push({
+            juegos.push({
               index: index,
               tipodejuego: row.gsx$tipodejuego.$t,
               titulo: row.gsx$titulo.$t,
@@ -396,34 +363,34 @@
        var html_tarjetas = "";
 
 
-        $.each(obras, function(index, obras){
+        $.each(juegos, function(index, juegos){
 
 
-          if( (configobras == 'Todas' || obras.tipodejuego.indexOf(configobras) > -1) && (configeditorial == 'Todas' || obras.editorial.indexOf(configeditorial) > -1 ) ) {            
+          if( (configjuegos == 'Todos' || juegos.tipodejuego.indexOf(configjuegos) > -1) && (configeditorial == 'Todas' || juegos.editorial.indexOf(configeditorial) > -1 ) ) {            
 
-            if(obras.destacado){
+            if(juegos.destacado){
               html_tarjetas = templates.tarjeta_destacado;
             }else{
               html_tarjetas = templates.tarjeta;
             }
 
 
-            if (obras.editorial == "" || obras.editorial == "-" ){
+            if (juegos.editorial == "" || juegos.editorial == "-" ){
               var editorial = '';
             } else {
-              var editorial = '<div class="media m-t-1"><div class="portaIconoLista"><p><i class="fa icono-arg-barrio"></i></p></div><div class="portaInfoLista"><p><b>editorial:</b>' + ' <span>' + obras.editorial + '</span></p></div></div>';
+              var editorial = '<div class="media m-t-1"><div class="portaIconoLista"><p><i class="fa icono-arg-barrio"></i></p></div><div class="portaInfoLista"><p><b>editorial:</b>' + ' <span>' + juegos.editorial + '</span></p></div></div>';
             }
 
-            if (obras.precio == "" || obras.precio == "-" ){
+            if (juegos.precio == "" || juegos.precio == "-" ){
               var precio = '';
             } else {
-              var precio = '<div class="media m-t-1"><div class="portaIconoLista"><p><i class="fa icono-arg-genero"></i></p></div><div class="portaInfoLista"><p><b>precio:</b>' + ' <span>' + obras.precio + '</span></p></div></div>';
+              var precio = '<div class="media m-t-1"><div class="portaIconoLista"><p><i class="fa icono-arg-genero"></i></p></div><div class="portaInfoLista"><p><b>precio:</b>' + ' <span>' + juegos.precio + '</span></p></div></div>';
             }
 
-            if (obras.stock == "" || obras.stock == "-" ){
+            if (juegos.stock == "" || juegos.stock == "-" ){
               var stock = '';
             } else {
-              var stock = '<div class="media m-t-1"><div class="portaIconoLista"><p><i class="fa fa-cog"></i></p></div><div class="portaInfoLista"><p><b>stock:</b>' + ' <span>' + obras.stock + '</span></p></div></div>';
+              var stock = '<div class="media m-t-1"><div class="portaIconoLista"><p><i class="fa fa-cog"></i></p></div><div class="portaInfoLista"><p><b>stock:</b>' + ' <span>' + juegos.stock + '</span></p></div></div>';
             }
 
             
@@ -431,33 +398,33 @@
             var modal_v = templates.modal_v;
             var modal_im = templates.modal_im;
 
-            html_tarjetas = html_tarjetas.replace(/{titulo}/gi, obras.titulo)
+            html_tarjetas = html_tarjetas.replace(/{titulo}/gi, juegos.titulo)
             .replace(/{index}/gi, index)
-            .replace(/{tipodejuego}/gi, obras.tipodejuego)
-            .replace(/{descripcion}/gi, obras.descripcion.substring(0, 100) + '...')
-            .replace(/{icono}/gi, obras.icono),
+            .replace(/{tipodejuego}/gi, juegos.tipodejuego)
+            .replace(/{descripcion}/gi, juegos.descripcion.substring(0, 100) + '...')
+            .replace(/{icono}/gi, juegos.icono),
 
             modal_n = modal_n.replace(/{index}/gi, index)
-            .replace(/{titulo}/gi, obras.titulo)
-            .replace(/{descripcion}/gi, obras.descripcion)
+            .replace(/{titulo}/gi, juegos.titulo)
+            .replace(/{descripcion}/gi, juegos.descripcion)
             .replace(/{editorial}/gi, editorial)
             .replace(/{precio}/gi, precio)
             .replace(/{stock}/gi, stock);
 
             modal_v = modal_v.replace(/{index}/gi, index)
-            .replace(/{titulo}/gi, obras.titulo)
-            .replace(/{descripcion}/gi, obras.descripcion)
-            .replace(/{video}/gi, obras.video)
-            .replace(/{imagen}/gi, obras.imagen)
+            .replace(/{titulo}/gi, juegos.titulo)
+            .replace(/{descripcion}/gi, juegos.descripcion)
+            .replace(/{video}/gi, juegos.video)
+            .replace(/{imagen}/gi, juegos.imagen)
             .replace(/{editorial}/gi, editorial)
             .replace(/{precio}/gi, precio)
             .replace(/{stock}/gi, stock);
 
             modal_im = modal_im.replace(/{index}/gi, index)
-            .replace(/{titulo}/gi, obras.titulo)
-            .replace(/{descripcion}/gi, obras.descripcion)
-            .replace(/{video}/gi, obras.video)
-            .replace(/{imagen}/gi, obras.imagen)
+            .replace(/{titulo}/gi, juegos.titulo)
+            .replace(/{descripcion}/gi, juegos.descripcion)
+            .replace(/{video}/gi, juegos.video)
+            .replace(/{imagen}/gi, juegos.imagen)
             .replace(/{editorial}/gi, editorial)
             .replace(/{precio}/gi, precio)
             .replace(/{stock}/gi, stock);
@@ -469,11 +436,11 @@
 
             $('[data-toggle="modal"]').click( function() {
               var id = $(this).attr('href').substr(1);
-              if('obras-' + index == id){
+              if('juegos-' + index == id){
                 $('[data-render=modales]').html('');
-                if(obras.video){
+                if(juegos.video){
                   $('[data-render=modales]').append( modal_v ); 
-                }else if(obras.imagen){
+                }else if(juegos.imagen){
                   $('[data-render=modales]').append( modal_im ); 
                 }else{
                   $('[data-render=modales]').append( modal_n ); 
@@ -498,22 +465,21 @@
         });
 
         var listOptions = { 
-          valueNames: [ 'nombre-obra', 'descripcion-obra' ], 
+          valueNames: [ 'nombre-juego', 'descripcion-juego' ], 
           page: 18,
           plugins: [ ListPagination({}) ]
         };
 
-        var obrasList = new List('obras', listOptions);
+        var juegosList = new List('juegos', listOptions);
+        var noItems = $('<p>nada de nada</p>');
 
-        $('.no-result').hide();
+        //$('.no-result').hide();
 
-        obrasList.on('updated', function(list) {
-          if (list.matchingItems.length > 0) {
-            $('.no-result').hide();
-            $('.list').show();
+        juegosList.on('updated', function(list) {
+          if (list.matchingItems.length == 0) {
+            $(list.list).append(noItems);
           } else {
-            $('.no-result').show();
-            $('.list').hide();//se esconde para sacar marginado cuando no hay resultados
+            noItems.detach();
           }
         })         
 
@@ -526,8 +492,8 @@
       render.tarjetas();
     });
 
-    $("#tipo-obra").on("change", function() {
-      configobras = $( "#tipo-obra option:selected" ).val();
+    $("#tipo-juego").on("change", function() {
+      configjuegos = $( "#tipo-juego option:selected" ).val();
       render.tarjetas();
     });
 
@@ -538,11 +504,5 @@
 
      
 </script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnjrx-mfaup3A-TQS4DyL0ngfxEqDDBqc&signed_in=true&region=AR&callback=initMap" 
-    async defer></script> -->
-
-<script type="text/javascript">
-</script>    
-
     
 
