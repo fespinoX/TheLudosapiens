@@ -1,14 +1,70 @@
 /* PALETA DE COLORES */
 
 /*
+AZUL #166F8A
+CELESTE #17A5BF
 
-VEIGE_ #b5b69c
-GRIS_ #7d7e73
-BORDO CLARO_ #876969
-BORDO MEDIO_ #6d4141
-BORDO OSCURO_ #422020
-GRIS OSCURO_ #323232
-VIOLETA_ #645188
+VIOLETA #7E6CAC
+MORADO #682345
 
+BERME #F04047
+NARANJA #F0AD1F
+
+VERDE NINJA #8CB840
+VERDE CLARO #E0E35D
 */
+
+/* FUENTES */
+
+/*
+font-family: 'i_pixel_uregular';
+font-family: 'telegramaraw';
+*/
+
+
+
+/* INDEX */
+
+
+
+
+/* GENERAL */
+
+.h2, h2 {
+    font-size: 50px;
+    font-family: 'i_pixel_uregular';
+    font-variant: small-caps;
+}
+
+a {
+    color: #F0AD1F; /* naranja */
+}
+
+.breadcrumb {
+    background-color: #682345; /* morado */
+}
+
+.breadcrumb>.active{
+    color: #fff;
+}
+
+/* LISTADO */
+
+
+#listado .jumbotron{
+    background-image: url('http://pro.bols.netdna-cdn.com/wp-content/uploads/2017/12/Murdershroom-Marsh.jpg');
+    background-size: cover;
+}
+
+#listado h2{
+    color: #fff;
+}
+
+#listado .jumbotron p{
+    color: #fff;
+    font-family: 'telegramaraw';
+    background-color: #682345; /* morado */
+    padding: 10px;
+    font-size: 18px;
+}
 
