@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Zombienauts</title>
+    <title>The Ludosapiens</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
@@ -20,6 +20,9 @@
 
     <link rel="stylesheet" type="text/css" href="cositas/fuentes/stylesheet-ipixelu.css"/> 
     <!-- I PIXEL U -->
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" media="all" />
+    <!-- FONTAWESOME -->
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- BOOTSTRAP -->
@@ -27,60 +30,6 @@
     <link rel="stylesheet" href="css/estilo.css">
 
 </head>
-
-
-
-    <style>
-      #map {
-        height: 600px;
-        width: 100%;
-      }
-
-      .item{
-        height: 310px;
-      }
-
-      .pie{
-        position: absolute;
-        bottom: 55px;
-        width: 90%;
-      }
-
-      .izq{
-        height: 30px;
-        padding-top: 6px;
-      }
-
-      .izq span{
-        font-size: 13px;
-        vertical-align: middle;
-        height: 30px;
-      }
-
-      .portaIconoLista{
-        width: 40px;
-      }
-
-      .portaIconoLista,
-      .portaInfoLista{
-        display: inline-block;
-      }
-
-      .portaIconoLista p{
-        text-align: center;
-      }
-
-      .portaRedes{
-        display: inline-block;
-        font-size: 25px;
-        margin-left: 10px;
-      }
-
-      a::after{
-    display: none!important;
-  }
-
-    </style>
 
 <body id="listado">
 
@@ -117,7 +66,7 @@
         <div class="col-md-6">    
           <div class="form-group">
             <label>Buscá por juego</label>
-            <input class="form-control search" placeholder="Buscá juegos por nombre o descripcion">
+            <input class="form-control search" placeholder="Buscá juegos por nombre o descripción">
           </div>
         </div>
         <div class="col-md-3">
@@ -157,7 +106,7 @@
                 <i class="fa fa-warning fa-fw fa-2x"></i>
               </div>
               <div class="media-body">
-                <p>Se están cargando todos los juegos. Este proceso puede tardar aproximadamente un minuto.</p>
+                <p>Se están cargando todos los juegos. Bancala un toque ansioso...</p>
               </div>
             </div>          
           </div>
@@ -215,18 +164,21 @@
     var templates = {
       tarjeta: `<div class="col-xs-12 col-sm-6 col-md-4 item">
     <a href="#juegos-{index}" data-toggle="modal" class="panel panel-default">
+      <div style="background-image:url('{imagen}');" class="panel-heading">
+      </div>
         <div class="panel-body">
             <div class="media">
                 <div class="media-left media-middle">
-                    <span class="fa {icono} fa-2x fa-fw" aria-hidden="true"></span>
+                    <span class="fa {icono}" aria-hidden="true"></span>
                 </div>
                 <div class="media-body media-middle">
                     <div class="text-muted">
-                        <h4>{tipodejuego}</h4>
+                        <label>{tipodejuego}</label>
                     </div>
                 </div>
-                <h3 class="nombre-juego m-t-1">{titulo}</h3>
+                <h3 class="nombre-juego">{titulo}</h3>
                 <p class="text-muted descripcion-juego">{descripcion}</p>
+                <p class="precio">{precio}</p>
             </div>
         </div>
     </a>
@@ -234,25 +186,22 @@
 
     tarjeta_destacado: `<div class="col-xs-12 col-sm-6 col-md-4 item">
     <a href="#juegos-{index}" data-toggle="modal" class="panel panel-default">
+      <div style="background-image:url('{imagen}');" class="panel-heading">
+        <span class="label label-success">Juego en oferta!</span>
+      </div>
         <div class="panel-body">
             <div class="media">
                 <div class="media-left media-middle">
-                    <span class="fa {icono} fa-2x fa-fw" aria-hidden="true"></span>
+                    <span class="fa {icono}" aria-hidden="true"></span>
                 </div>
                 <div class="media-body media-middle">
                     <div class="text-muted">
-                        <h4>{tipodejuego}</h4>
+                        <label>{tipodejuego}</label>
                     </div>
                 </div>
-                <h3 class="nombre-juego m-t-1">{titulo}</h3>
+                <h3 class="nombre-juego">{titulo}</h3>
                 <p class="text-muted descripcion-juego">{descripcion}</p>
-                <div class="pie">
-                <div class="izq">
-                  <p>
-                    <span class="label label-success">Juego en oferta!</span>
-                  </p>
-                </div>
-                </div>
+                <p class="precio">{precio}</p>
             </div>
         </div>
     </a>
@@ -411,9 +360,11 @@
 
             html_tarjetas = html_tarjetas.replace(/{titulo}/gi, juegos.titulo)
             .replace(/{index}/gi, index)
+            .replace(/{imagen}/gi, juegos.imagen)
             .replace(/{tipodejuego}/gi, juegos.tipodejuego)
             .replace(/{descripcion}/gi, juegos.descripcion.substring(0, 100) + '...')
-            .replace(/{icono}/gi, juegos.icono),
+            .replace(/{precio}/gi, juegos.precio)
+            .replace(/{icono}/gi, juegos.icono);
 
             modal_n = modal_n.replace(/{index}/gi, index)
             .replace(/{titulo}/gi, juegos.titulo)

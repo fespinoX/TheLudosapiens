@@ -12,6 +12,14 @@ NARANJA #F0AD1F
 
 VERDE NINJA #8CB840
 VERDE CLARO #E0E35D
+
+ROSA #D15FA4
+
+ROSA CLARITO #F58E9A
+VIOLETA CLARITO #BD9CCB
+NARANJA CLARITO #F37C6F
+GRIS #9695A2
+SEMI NEGRO #222
 */
 
 /* FUENTES */
@@ -30,6 +38,10 @@ font-family: 'telegramaraw';
 
 /* GENERAL */
 
+*{
+    font-family: 'telegramaraw';
+}
+
 .h2, h2 {
     font-size: 50px;
     font-family: 'i_pixel_uregular';
@@ -38,6 +50,14 @@ font-family: 'telegramaraw';
 
 a {
     color: #F0AD1F; /* naranja */
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+a:focus, a:hover {
+    color: #F04047; /* berme */
+    text-decoration: none;
 }
 
 .breadcrumb {
@@ -48,12 +68,69 @@ a {
     color: #fff;
 }
 
+.alert{
+    background-color: transparent;
+    border: solid 2px;
+}
+
+.alert-warning{
+    border-color: #F0AD1F; /* naranja */
+    color: #F0AD1F; /* naranja */
+}
+
+.panel{
+    border: none;
+}
+
+.panel h3{
+    margin-top: 0;
+}
+
+.text-muted {
+    color: #999;
+}
+
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.pagination>.active>span, 
+.pagination>.active>span:focus, 
+.pagination>.active>span:hover {
+    background-color: #166F8A;
+    border-color: #166F8A;
+}
+
 /* LISTADO */
 
+#listado{
+    background-color: #222; /* SEMI NEGRO */
+}
 
 #listado .jumbotron{
+    background-color: #222; /* SEMI NEGRO */
     background-image: url('http://pro.bols.netdna-cdn.com/wp-content/uploads/2017/12/Murdershroom-Marsh.jpg');
     background-size: cover;
+}
+
+#listado .item {
+    height: 540px;
+}
+
+#listado .list {
+    margin-top: 40px;
+}
+
+#listado .panel-default>.panel-heading {
+    background-color: #222;
+    height: 320px;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+}
+
+#listado .label-success{
+    background-color: #F04047; /* berme */
+    font-size: 14px;
 }
 
 #listado h2{
@@ -62,9 +139,31 @@ a {
 
 #listado .jumbotron p{
     color: #fff;
-    font-family: 'telegramaraw';
     background-color: #682345; /* morado */
     padding: 10px;
     font-size: 18px;
+}
+
+#listado .fa{
+    font-size: 1.4em;
+    color: #D15FA4; /* rosa */
+}
+
+#listado .precio{
+    color: #7E6CAC; /* violeta */
+}
+
+#listado label{
+    color: #fff;
+}
+
+#listado p{
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+}
+
+#listado a:hover p{
+    color: #F04047; /* berme */
 }
 
