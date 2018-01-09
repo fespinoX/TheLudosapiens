@@ -84,10 +84,15 @@ a:focus, a:hover {
 
 .panel h3{
     margin-top: 0;
+    font-size: 20px;
 }
 
 .text-muted {
     color: #999;
+}
+
+.portapaginator{
+    margin-top: 50px;
 }
 
 .pagination>.active>a, 
@@ -96,8 +101,8 @@ a:focus, a:hover {
 .pagination>.active>span, 
 .pagination>.active>span:focus, 
 .pagination>.active>span:hover {
-    background-color: #166F8A;
-    border-color: #166F8A;
+    background-color: #682345; /* morado */
+    border-color: #682345; /* morado */
 }
 
 /* LISTADO */
@@ -122,7 +127,7 @@ a:focus, a:hover {
 
 #listado .panel-default>.panel-heading {
     background-color: #222;
-    height: 320px;
+    height: 260px;
     background-size: 100%;
     background-position: center;
     border: none;
@@ -144,17 +149,23 @@ a:focus, a:hover {
     font-size: 18px;
 }
 
-#listado .fa{
-    font-size: 1.4em;
-    color: #D15FA4; /* rosa */
+#listado .precio{
+    margin-top: 0;
+    color: #8CB840; /* verde ninja */
 }
 
-#listado .precio{
+#listado .idioma{
+    margin-bottom: 0;
     color: #7E6CAC; /* violeta */
 }
 
 #listado label{
     color: #fff;
+}
+
+#listado .media-left span{
+    font-size: 18px;
+    color: #D15FA4; /* rosa */
 }
 
 #listado p{
@@ -165,5 +176,49 @@ a:focus, a:hover {
 
 #listado a:hover p{
     color: #F04047; /* berme */
+}
+
+.modalListado{
+    background-color: #222;
+    margin-top: 40%;
+}
+
+.modalListado .nombre-juego{
+    color: #fff;
+}
+
+.modalListado .modal-header{
+    background-color: #682345; /* morado */
+    border-bottom: none;
+}
+
+.modalListado .descripcion-juego{
+    color: #fff;
+}
+
+.modalListado span{
+    display: inline-block;
+    width: 15px;
+}
+
+.modalListado p{
+    color: #fff;
+}
+
+.modalListado .edi{
+    color: #D15FA4; /* rosa */
+}
+
+.modalListado .pre{
+    color: #8CB840; /* verde */
+}
+
+.modalListado .idi{
+    color: #7E6CAC; /* violeta */
+}
+
+
+.modalListado .sto{
+    color: #F0AD1F; /* naranja */
 }
 
