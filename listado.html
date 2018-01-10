@@ -221,10 +221,13 @@
                     <div class="modal-body p-b-3">  
                       <p class="descripcion-juego m-t-1">{descripcion}</p>
                       <div>
-                        <p><span><i class="edi fas fa-bolt"></i></span> Editorial: {editorial}</p>
-                        <p><span><i class="pre far fa-money-bill-alt"></i></span> Precio: {precio}</p>
-                        <p><span><i class="idi fas fa-language"></i></span> Idioma: {idioma}</p>
+                        <p><span><i class="edi fas fa-bolt"></i></span> {editorial}</p>
+                        <p><span><i class="pre fas fa-dollar-sign"></i></span> {precio}</p>
+                        <p><span><i class="idi fas fa-language"></i></span> {idioma}</p>
                         <p><span><i class="sto fas fa-cubes"></i></span> Stock: {stock}</p>
+                        <p><span><i class="you fab fa-youtube"></i></span><a href="{video}" target="_blank"> Video</a></p>
+                        <p><span><i class="bgg fas fa-asterisk"></i></span><a href="{linkbgg}" target="_blank"> BGG</a></p>
+                        <p><span><i class="mer fas fa-certificate"></i></span><a href="{linkml}" target="_blank"> Mercado Libre</a></p>
                       </div>
                     </div>
                   </div>
@@ -256,6 +259,7 @@
               video: row.gsx$video.$t,
               stock: row.gsx$stock.$t,
               linkbgg: row.gsx$linkbgg.$t,
+              linkml: row.gsx$linkml.$t,
               editorial: row.gsx$editorial.$t,
               precio: row.gsx$precio.$t,
               idioma: row.gsx$idioma.$t,
@@ -316,7 +320,8 @@
             .replace(/{video}/gi, juegos.video)
             .replace(/{stock}/gi, juegos.stock)
             .replace(/{idioma}/gi, juegos.idioma)
-            .replace(/{linkbgg}/gi, juegos.linkbgg);
+            .replace(/{linkbgg}/gi, juegos.linkbgg)
+            .replace(/{linkml}/gi, juegos.linkml);
 
 
 

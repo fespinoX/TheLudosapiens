@@ -181,6 +181,8 @@ a:focus, a:hover {
 .modalListado{
     background-color: #222;
     margin-top: 40%;
+    width: 80%;
+    margin-left: auto;
 }
 
 .modalListado .nombre-juego{
@@ -217,8 +219,20 @@ a:focus, a:hover {
     color: #7E6CAC; /* violeta */
 }
 
-
 .modalListado .sto{
+    color: #D15FA4; /* rosa */
+}
+
+.modalListado .you{
+    color: #F04047; /* berme */
+}
+
+.modalListado .bgg{
+    color: #17A5BF; /* celeste */
+}
+
+.modalListado .mer{
     color: #F0AD1F; /* naranja */
 }
+
 
